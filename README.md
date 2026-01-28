@@ -7,7 +7,7 @@
 在你的專案中，使用以下指令來加入 skills：
 
 ```bash
-  npx skills add wpsteak/popmagic-skills --skill emotion-bird
+npx skills add wpsteak/popmagic-skills --skill emotion-bird
 ```
 
 ## Available Skills
