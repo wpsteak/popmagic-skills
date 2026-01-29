@@ -44,11 +44,6 @@ description: This skill should be used when the user asks to "督促我", "remin
 3. 用日期過濾找到今天的 page，記錄該頁面的 ID
 4. 用 `mcp__notion__API-get-block-children` 取得未完成的 to_do blocks（checked: false）
 5. 生成**一句話**情勒訊息（需符合上述輸出規則）
-6. 用 `mcp__notion__API-create-a-comment` 將該訊息留言在該 page 上
-   - `parent`: `{"page_id": "步驟3的page_id"}`
-   - `rich_text`: 需包含兩個物件以達成 @mention 效果（陣列格式）
-     1. Mention 物件（**必須包含 text 屬性**以免報錯）：
-        `{"type": "mention", "mention": {"type": "user", "user": {"id": "步驟1找到的真人user_id"}}, "text": {"content": "@User"}}`
-     2. Text 物件：`{"type": "text", "text": {"content": " " + 你的情勒訊息}}`
-   - **重要**：rich_text 必須是 JSON 陣列，空格要在訊息前面。根據工具定義，**所有物件（包含 mention）都必須包含 `text` 屬性**。
+6. 用 `mcp__claude_ai_Notion__notion-create-comment` 將該訊息留言在該 page 上
+   **⚠️ 重要：必須使用 `mcp__claude_ai_Notion__notion-create-comment`，不是 `mcp__notion__API-create-a-comment`！**
 7. 回報使用者：「已在 Notion 留下愛的叮嚀...記得去看通知... 🙂」
